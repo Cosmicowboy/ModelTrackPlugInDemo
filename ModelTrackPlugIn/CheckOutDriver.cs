@@ -55,7 +55,7 @@ namespace ModelTrackPlugIn
                     }
                     else
                     {
-                        mCheckOutMngr.SignOutModelInExcel();
+                        mCheckOutMngr.SignOutModelInExcel(); //needs to be sql
                     }
 
                     ProjectModels.RemoveModel(modelName);
