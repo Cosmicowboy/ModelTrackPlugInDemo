@@ -12,7 +12,7 @@ namespace ModelTrackPlugIn.Helpers.Commands
 
         public string GetProgrammerName()
         {
-            string programmerName = (string)PMill.ExecuteEx("print $project.Programmer");
+            string programmerName = PMill.GetPowerMillParameter("Programmer");
             return programmerName;
         }
 
@@ -23,6 +23,7 @@ namespace ModelTrackPlugIn.Helpers.Commands
         /// <returns></returns>
         public string GetImportTime(string fullModelName)
         {
+
             return PMill.GetPowerMillEntityParameter("model", fullModelName, "ImportTime");
         }
 

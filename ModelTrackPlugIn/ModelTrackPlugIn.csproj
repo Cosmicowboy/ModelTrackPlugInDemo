@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net4.5.1</TargetFramework>
+    <TargetFramework>net4.8</TargetFramework>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>H:\Program Files\PowerMill 2025\file\plugins\framework\PluginFramework40\key_pair.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autodesk.ProductInterface.PowerMILL" Version="1.2.5" />
     <PackageReference Include="Autodesk.WPFControls.ProductControls.PowerMILL" Version="1.2.5" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Program Files\PowerMill 2025\file\plugins\framework\PluginFramework40\PluginFramework.csproj" />

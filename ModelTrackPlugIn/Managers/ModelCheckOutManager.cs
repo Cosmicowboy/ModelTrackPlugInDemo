@@ -1,9 +1,11 @@
 ﻿using ModelTrackPlugIn.Helpers.Commands;
 using ModelTrackPlugIn.Interfaces;
 using ModelTrackPlugIn.ModelClasses;
+using ModelTrackPlugIn.Helpers.DataAccess;
 using System;
 using System.IO;
 using System.Windows.Forms;
+using ModelTrackPlugIn.Helpers.Extensions;
 
 namespace ModelTrackPlugIn.Managers
 {
@@ -28,11 +30,12 @@ namespace ModelTrackPlugIn.Managers
 
         internal void BuildProgrammerModelProfile(string modelName)
         {
-            TrackedModel = new ProjectModel(modelName);
+            TrackedModel = new ProjectModel(modelName)
+            {
+                ModelFileImportDate = PMillCommands.GetImportTime(modelName).FormatTime(),
+                FilePath = PMillCommands.GetFilePath(modelName)
+            };
 
-            PMillCommands.GetImportTime(modelName);
-
-            PMillCommands.GetFilePath(modelName);
         }
 
         public bool CompareModelDates()
@@ -53,6 +56,7 @@ namespace ModelTrackPlugIn.Managers
 
         private DateTime GetCreationDateTime()
         {
+
             if (TrackedModel != null)
             {
                 DateTime modelInTTJobs = new DateTime();
@@ -85,10 +89,19 @@ namespace ModelTrackPlugIn.Managers
             }
             else
             {
-                throw new Exception("Programmer Model Is Null\nGet Date Time called before programmer model built");
+                throw new Exception("Programmer Model Is Null\nGetCreationDateTime called before programmer model built");
             }
         }
 
-    }
+        public void CheckOutModel()
+        {
+            if (TrackedModel != null)
+            {
 
+                SqlAccess sqlAccess = new SqlAccess();
+
+                sqlAccess.EnterData(ProgrammerName, TrackedModel.FullName);
+            }
+        }
+    }
 }

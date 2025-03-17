@@ -18,7 +18,7 @@ namespace ModelTrackPlugIn.ModelClasses
             OnQueueModified?.Invoke(this, EventArgs.Empty);
         }
 
-        //Add verififcation tailored to client
+        //Add verification tailored to client
         public void Enqueue(string modelName)
         {
            // if( !modelName.Verify()) return;

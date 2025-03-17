@@ -3,6 +3,7 @@ using ModelTrackPlugIn.ModelClasses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace ModelTrackPlugIn
         public CheckOutDriver(ModelContainers projectModels)
         {
             projectModels.OnQueueModified += HandleQueueModifiedEvent;
+            ProjectModels = projectModels;
         }
 
         private void HandleQueueModifiedEvent(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace ModelTrackPlugIn
 
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            
             try
             {
                 ModelCheckOutManager mCheckOutMngr = new ModelCheckOutManager();
@@ -55,7 +58,7 @@ namespace ModelTrackPlugIn
                     }
                     else
                     {
-                        mCheckOutMngr.SignOutModelInExcel(); //needs to be sql
+                        mCheckOutMngr.CheckOutModel(); 
                     }
 
                     ProjectModels.RemoveModel(modelName);
@@ -64,6 +67,7 @@ namespace ModelTrackPlugIn
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.Message);
             }
             finally
