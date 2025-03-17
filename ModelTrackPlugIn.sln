@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelTrackPlugIn", "ModelTrackPlugIn\ModelTrackPlugIn.csproj", "{FEFD4979-3799-417D-8E36-1D38CAB7D056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginFramework", "..\..\Program Files\PowerMill 2025\file\plugins\framework\PluginFramework40\PluginFramework.csproj", "{A6706C9C-D607-48E5-8B53-FD859EA8DDD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEFD4979-3799-417D-8E36-1D38CAB7D056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFD4979-3799-417D-8E36-1D38CAB7D056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFD4979-3799-417D-8E36-1D38CAB7D056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFD4979-3799-417D-8E36-1D38CAB7D056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6706C9C-D607-48E5-8B53-FD859EA8DDD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6706C9C-D607-48E5-8B53-FD859EA8DDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6706C9C-D607-48E5-8B53-FD859EA8DDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6706C9C-D607-48E5-8B53-FD859EA8DDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32C70BC2-FC67-4D48-9C91-97958525361F}
+	EndGlobalSection
+EndGlobal
